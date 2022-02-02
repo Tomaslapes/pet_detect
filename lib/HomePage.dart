@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import 'package:flutter/services.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -9,34 +10,45 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(backgroundColor: Colors.redAccent,
+      appBar: AppBar(backgroundColor: Colors.white,
       title: Row(
         children: [
-          Icon(Icons.pets),
-          Text("Detektor zvěře"),
-          Icon(Icons.sensor_window),
+          // Icon(Icons.pets,color: ,),
+          Text(
+              "Pet Detector",
+              style: TextStyle(
+                fontFamily: "Montserrat",
+                color: Colors.black54,
+                fontWeight: FontWeight.w500
+              ),
+          ),
+          // Icon(Icons.sensor_window),
         ],
         mainAxisAlignment: MainAxisAlignment.center,
       ),),
-      body: Container(
-        color: Colors.grey[200],
-        alignment: Alignment.center,
-        padding: EdgeInsets.only(top: 10),
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(15),
-              child: Image.asset("lib/Images/DogCatTop.png"),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(top:20),
-              child: Text("Pes nebo kočka je u dveří!",
-              style: TextStyle(
-                fontSize: 30,
-                fontWeight: FontWeight.bold
-              ),),
-            )
-          ],
+      body: Center(
+        child: Container(
+          color: Colors.white70,
+          alignment: Alignment.center,
+          padding: EdgeInsets.only(top: 50),
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(0),
+                child: Image.asset("lib/Images/dog.png"),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top:50),
+                child: Text("Pes nebo kočka je u dveří!",
+                style: TextStyle(
+                  fontSize: 20,
+                  fontFamily: "Montserrat"
+                ),),
+              )
+            ],
+            // crossAxisAlignment: CrossAxisAlignment.center,
+            // mainAxisAlignment: MainAxisAlignment.spaceAround,
+          ),
         ),
       ),
     );
